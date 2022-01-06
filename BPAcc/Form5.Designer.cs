@@ -186,6 +186,7 @@ namespace BPAcc
             this.button8.Text = "Potvrdi";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Visible = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -237,6 +238,7 @@ namespace BPAcc
             this.button11.TabIndex = 26;
             this.button11.Text = "20 KM";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -249,6 +251,7 @@ namespace BPAcc
             this.button12.TabIndex = 27;
             this.button12.Text = "100 KM";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -261,6 +264,7 @@ namespace BPAcc
             this.button13.TabIndex = 28;
             this.button13.Text = "50 KM";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -273,6 +277,7 @@ namespace BPAcc
             this.button14.TabIndex = 29;
             this.button14.Text = "200 KM";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // pictureBox3
             // 

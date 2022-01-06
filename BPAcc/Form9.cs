@@ -7,14 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace BPAcc
 {
     public partial class Form9 : Form
     {
+
+        public static string conString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Bankomat;Integrated Security=True";
+        public static string idTrenutnogKorisnika;
+        public static string brojRacunaKorisnika;
         public Form9()
         {
             InitializeComponent();
+            idTrenutnogKorisnika = Form2.ID;
+            brojRacunaKorisnika = Form2.brojRacuna;
+            string query = "SELECT Ime, Prezime, AdresaStanovanja, KontaktTelefon FROM Korisnik WHERE KorisnikID = '" + idTrenutnogKorisnika + "'";
+            SqlConnection konekcija = new SqlConnection(conString);
+            konekcija.Open();
+            SqlCommand cmd = new SqlCommand(query, konekcija);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            reader.Read();
+            label1.Text = reader[0].ToString();
+            label2.Text = reader[1].ToString();
+            label3.Text = reader[2].ToString();
+            label4.Text = reader[3].ToString();
+            label5.Text = brojRacunaKorisnika;
+            reader.Close();
+            konekcija.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

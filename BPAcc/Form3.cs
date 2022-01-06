@@ -12,10 +12,14 @@ namespace BPAcc
 {
     public partial class Form3 : Form
     {
+        public static string imeTrenutnogKorisnika = "";
         public Form3()
         {
             InitializeComponent();
+
+            imeTrenutnogKorisnika = Form2.ime;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

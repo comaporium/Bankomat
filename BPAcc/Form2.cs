@@ -7,23 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
+
+
 
 namespace BPAcc
 {
     public partial class Form2 : Form
     {
-        public int brojRacuna = 0;
-        public int sifra = 0;
-        public int zadnjiBroj = 0;
-        public int pomoc = 0;
-        
         public Form2()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public static string brojRacuna;
+        public static string sifra;
+        public static string stanje;
+        public string conString = "Data Source=.\\SQLEXPRESS;Initial Catalog=Bankomat;Integrated Security=True";
+        public static string ID;
+        public static string ime;
+
+
+    private void button1_Click(object sender, EventArgs e)
         {
 
         }
@@ -44,26 +49,59 @@ namespace BPAcc
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            var Form3 = new Form3();
-            Form3.Show();
-            this.Hide();
+            string brRacuna = textBox1.Text;
+            string pin = textBox2.Text;
+            /*string query = "SELECT r.BrojRacuna, k.korisnikID, r.Pin, k.Ime" +
+               " FROM racun r, korisnik k WHERE r.BrojRacuna ='" + brRacuna + "' AND k.KorisnikID = r.KorisnikID";*/
+            string query = "SELECT Racun.BrojRacuna, Racun.KorisnikID, Racun.Pin, Korisnik.Ime FROM Racun INNER JOIN Korisnik ON" +
+                " Racun.KorisnikID = Korisnik.KorisnikID WHERE Racun.BrojRacuna = '"+ brRacuna +"'";
+            try
+            {
+                SqlConnection konekcija = new SqlConnection(conString);
+                konekcija.Open();
+                SqlCommand cmd = new SqlCommand(query, konekcija);
+                SqlDataReader reader;
+                reader = cmd.ExecuteReader();
+                reader.Read();
+                if (!reader.HasRows)
+                {
+                    errorProvider1.SetError(textBox1, "Nepostojeći račun!");
+                }
+                else
+                {
+                    brojRacuna = reader[0].ToString();
+                    ID = reader[1].ToString();
+                    sifra = reader[2].ToString();
+                    ime = reader[3].ToString();
+                    if (pin == sifra)
+                    {
+                        MessageBox.Show("Dobrodošli, " + ime + "!");
+                        var Form3 = new Form3();
+                        Form3.Show();
+                        this.Hide();
+                    } else
+                    {
+                        errorProvider1.SetError(textBox2, "Pogrešan pin!");
+                    }
+                }
+                reader.Close();
+                konekcija.Close();
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             if (textBox2.Visible == false)
             {
-                if (sifra < 10000)
-                {
-                    textBox1.Text = textBox1.Text + Convert.ToString(3);
-                }
+               textBox1.Text = textBox1.Text + Convert.ToString(3);
+
             }
             else
             {
-                if (sifra < 10000)
-                {
-                    textBox2.Text = textBox2.Text + Convert.ToString(3);
-                }
+               textBox2.Text = textBox2.Text + Convert.ToString(3);
             }
         }
 
@@ -71,17 +109,11 @@ namespace BPAcc
         {
             if (textBox2.Visible == false)
             {
-                if (sifra < 10000)
-                {
-                    textBox1.Text = textBox1.Text + Convert.ToString(1);
-                }
+               textBox1.Text = textBox1.Text + Convert.ToString(1);
             }
             else
             {
-                if (sifra < 10000)
-                {
-                    textBox2.Text = textBox2.Text + Convert.ToString(1);
-                }
+               textBox2.Text = textBox2.Text + Convert.ToString(1);
             }
         }
 
@@ -89,17 +121,11 @@ namespace BPAcc
         {
             if (textBox2.Visible == false)
             {
-                if (sifra < 10000)
-                {
-                    textBox1.Text = textBox1.Text + Convert.ToString(2);
-                }
+               textBox1.Text = textBox1.Text + Convert.ToString(2);
             }
             else
             {
-                if (sifra < 10000)
-                {
-                    textBox2.Text = textBox2.Text + Convert.ToString(2);
-                }
+               textBox2.Text = textBox2.Text + Convert.ToString(2);
             }
         }
 
@@ -107,17 +133,11 @@ namespace BPAcc
         {
             if (textBox2.Visible == false)
             {
-                if (sifra < 10000)
-                {
-                    textBox1.Text = textBox1.Text + Convert.ToString(4);
-                }
+               textBox1.Text = textBox1.Text + Convert.ToString(4);
             }
             else
             {
-                if (sifra < 10000)
-                {
-                    textBox2.Text = textBox2.Text + Convert.ToString(4);
-                }
+               textBox2.Text = textBox2.Text + Convert.ToString(4);
             }
         }
 
@@ -125,17 +145,11 @@ namespace BPAcc
         {
             if (textBox2.Visible == false)
             {
-                if (sifra < 10000)
-                {
-                    textBox1.Text = textBox1.Text + Convert.ToString(5);
-                }
+               textBox1.Text = textBox1.Text + Convert.ToString(5);
             }
             else
             {
-                if (sifra < 10000)
-                {
-                    textBox2.Text = textBox2.Text + Convert.ToString(5);
-                }
+               textBox2.Text = textBox2.Text + Convert.ToString(5);
             }
         }
 
@@ -143,17 +157,11 @@ namespace BPAcc
         {
             if (textBox2.Visible == false)
             {
-                if (sifra < 10000)
-                {
-                    textBox1.Text = textBox1.Text + Convert.ToString(6);
-                }
+               textBox1.Text = textBox1.Text + Convert.ToString(6);
             }
             else
             {
-                if (sifra < 10000)
-                {
-                    textBox2.Text = textBox2.Text + Convert.ToString(6);
-                }
+               textBox2.Text = textBox2.Text + Convert.ToString(6);
             }
         }
 
@@ -161,17 +169,11 @@ namespace BPAcc
         {
             if (textBox2.Visible == false)
             {
-                if (sifra < 10000)
-                {
-                    textBox1.Text = textBox1.Text + Convert.ToString(7);
-                }
+               textBox1.Text = textBox1.Text + Convert.ToString(7);
             }
             else
             {
-                if (sifra < 10000)
-                {
-                    textBox2.Text = textBox2.Text + Convert.ToString(7);
-                }
+               textBox2.Text = textBox2.Text + Convert.ToString(7);
             }
         }
 
@@ -179,17 +181,11 @@ namespace BPAcc
         {
             if (textBox2.Visible == false)
             {
-                if (sifra < 10000)
-                {
-                    textBox1.Text = textBox1.Text + Convert.ToString(8);
-                }
+                textBox1.Text = textBox1.Text + Convert.ToString(8);
             }
             else
             {
-                if (sifra < 10000)
-                {
-                    textBox2.Text = textBox2.Text + Convert.ToString(8);
-                }
+                textBox2.Text = textBox2.Text + Convert.ToString(8);
             }
         }
 
@@ -198,17 +194,11 @@ namespace BPAcc
 
             if (textBox2.Visible == false)
             {
-                if (sifra < 10000)
-                {
-                    textBox1.Text = textBox1.Text + Convert.ToString(9);
-                }
+                textBox1.Text = textBox1.Text + Convert.ToString(9);
             }
             else
             {
-                if (sifra < 10000)
-                {
-                    textBox2.Text = textBox2.Text + Convert.ToString(9);
-                }
+                textBox2.Text = textBox2.Text + Convert.ToString(9);
             }
         }
 
@@ -216,16 +206,10 @@ namespace BPAcc
         {
             if (textBox2.Visible == false)
             {
-                if (sifra < 10000)
-                {
-                    textBox1.Text = textBox1.Text + Convert.ToString(0);
-                }
+                textBox1.Text = textBox1.Text + Convert.ToString(0);
             } else
             {
-                if (sifra < 10000)
-                {
-                    textBox2.Text = textBox2.Text + Convert.ToString(0);
-                }
+                textBox2.Text = textBox2.Text + Convert.ToString(0);
             }
         }
 
@@ -237,6 +221,8 @@ namespace BPAcc
             } else
             {
                 textBox2.Text = "";
+                textBox1.Text = "";
+                textBox2.Visible = false;
             }
         }
 
@@ -246,5 +232,7 @@ namespace BPAcc
             label2.Visible = true;
             button1.Visible = true;
         }
+
+
     }
 }

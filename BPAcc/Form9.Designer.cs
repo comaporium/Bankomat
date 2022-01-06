@@ -170,9 +170,11 @@ namespace BPAcc
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label1.Location = new System.Drawing.Point(367, 68);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(494, 93);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(65, 28);
             this.label1.TabIndex = 48;
             this.label1.Text = "label1";
             // 
@@ -180,9 +182,11 @@ namespace BPAcc
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label2.Location = new System.Drawing.Point(367, 107);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(494, 132);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.Size = new System.Drawing.Size(65, 28);
             this.label2.TabIndex = 49;
             this.label2.Text = "label2";
             // 
@@ -190,9 +194,11 @@ namespace BPAcc
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label3.Location = new System.Drawing.Point(367, 151);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(494, 176);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.Size = new System.Drawing.Size(65, 28);
             this.label3.TabIndex = 49;
             this.label3.Text = "label2";
             // 
@@ -200,9 +206,11 @@ namespace BPAcc
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label4.Location = new System.Drawing.Point(367, 190);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(494, 215);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.Size = new System.Drawing.Size(65, 28);
             this.label4.TabIndex = 50;
             this.label4.Text = "label4";
             // 
@@ -210,9 +218,11 @@ namespace BPAcc
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label5.Location = new System.Drawing.Point(367, 233);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(494, 256);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
+            this.label5.Size = new System.Drawing.Size(65, 28);
             this.label5.TabIndex = 51;
             this.label5.Text = "label5";
             // 
@@ -220,9 +230,11 @@ namespace BPAcc
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label6.Location = new System.Drawing.Point(283, 233);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(374, 256);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 15);
+            this.label6.Size = new System.Drawing.Size(114, 28);
             this.label6.TabIndex = 56;
             this.label6.Text = "Broj računa:";
             // 
@@ -230,9 +242,11 @@ namespace BPAcc
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label7.Location = new System.Drawing.Point(302, 190);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(403, 215);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 15);
+            this.label7.Size = new System.Drawing.Size(85, 28);
             this.label7.TabIndex = 55;
             this.label7.Text = "Kontakt:";
             // 
@@ -240,9 +254,11 @@ namespace BPAcc
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label8.Location = new System.Drawing.Point(301, 107);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(403, 132);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 15);
+            this.label8.Size = new System.Drawing.Size(85, 28);
             this.label8.TabIndex = 53;
             this.label8.Text = "Prezime:";
             // 
@@ -250,19 +266,23 @@ namespace BPAcc
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label9.Location = new System.Drawing.Point(313, 151);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(412, 176);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 15);
+            this.label9.Size = new System.Drawing.Size(76, 28);
             this.label9.TabIndex = 54;
-            this.label9.Text = "JMBG:";
+            this.label9.Text = "Adresa:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.label10.Location = new System.Drawing.Point(323, 68);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(440, 93);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(30, 15);
+            this.label10.Size = new System.Drawing.Size(48, 28);
             this.label10.TabIndex = 52;
             this.label10.Text = "Ime:";
             // 
